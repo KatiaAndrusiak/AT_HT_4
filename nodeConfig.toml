@@ -1,0 +1,29 @@
+title = "Node Config"
+
+[server]
+
+allow-cors = false
+max-threads = 9
+port = 5555
+
+[node]
+
+detect-drivers = true
+grid-url = "http://192.168.0.202:4444"
+heartbeat-period = 60
+max-sessions = 2
+register-cycle = 10
+register-period = 120
+session-timeout = 300
+
+[logging]
+log-encoding = UTF-8
+log-level = "INFO"
+plain-logs = true
+structured-logs = false
+
+[events]
+bind = false
+implementation = "org.openqa.selenium.events.zeromq.ZeroMqEventBus"
+publish = "tcp://192.168.0.202:4442"
+subscribe = "tcp://192.168.0.202:4443"
